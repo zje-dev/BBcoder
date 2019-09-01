@@ -15,7 +15,12 @@ window.onload = function () {
 		var ActiveElement = document.getElementById("ET").options[document.getElementById("ET").selectedIndex].value;
 		console.log(ActiveElement);
 		function EditColor () {
-			let val = "[color=#"+document.getElementById("IC").value+"]"+document.getElementById("ETT").value+"[/color]";
+			let val = "[color="+document.getElementById("IC").value+"]"+document.getElementById("ETT").value+"[/color]";
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+		function tachar () {
+			var val = "[s]"+document.getElementById("ETT").value+"[/s]"
 			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
 			console.log(val);
 		}
@@ -24,6 +29,8 @@ window.onload = function () {
 				document.getElementById("ETB").onclick = EditColor;
 				break;
 			case "T":
+				document.getElementById("TC").onclick = tachar;
+				document.getElementById("ETB").onclick = tachar;
 				break;
 		}
 	}
