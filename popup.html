@@ -5,7 +5,7 @@
 		<script src="js/index.js" type="text/javascript"></script>
 	</head>
 	<body id="body">
-		<center class="SCTb"><input style="border-top-left-radius: 10px;border-top-right-radius: 10px;" type="text" value="texto"/></center><div id="SCT" class="false">
+		<center class="SCTb"><input style="border-top-left-radius: 10px;border-top-right-radius: 10px;" type="text" value="texto" id="in_the_end"/></center><div id="SCT" class="false">
 		<center>
 			<select id="EV">
 				<option value="0">seleccionar</option>
@@ -29,17 +29,17 @@
 				<!-- </añadir una lista> -->
 				<!--<opciones para editar texto>-->
 				<div id="2" style="display: none">
-					<input type="text" placeholder="texto a editar" style="border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;"/>
-					<input type="button" value="añadir texto editado" style="width: 95%;border: solid 0px;padding: 7px 10px;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"/>
-					<div class="SCTb" style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px">
-						<select value="ET">
+					<input type="text" id="ETT" placeholder="texto a editar" style="border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;"/>
+					<input type="button" id="ETB" value="añadir texto editado" style="width: 95%;border: solid 0px;padding: 7px 10px;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"/>
+					<div class="SCTb" style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 0px;border-top-right-radius: 0px;height: 75%;width: 80%;padding: 0px">
+						<select id="ET" value="C">
 							<option value="C">cambiarle el color al texto</option>
 							<option value="T">tachar texto</option>
 							<option value="S">subrayar texto</option>
 						</select>
 						<div>
 							<div id="C" style="display: block">
-								seleccionar color: <input type="color" style="border: solid 0px"/>
+								seleccionar color: <input id="IC" type="color" style="border: solid 0px"/>
 							</div>
 							<div id="T" style="display: none">
 								<input type="button" value="tachar" style="border: solid 0px;border-radius: 10px;width: 95%;background-color: white"/>
@@ -52,7 +52,6 @@
 				</div>
 				<!--</opciones para editar texto>-->
 			</div>
-			<input value="texto final" type="text" style="position: absolute;left: 3%;bottom: 5%;" readonly/>
 		</center>
 	</body>
 </html>
