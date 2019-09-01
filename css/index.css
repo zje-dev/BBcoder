@@ -48,3 +48,10 @@ select, .edit {
 	position: absolute;
 	background-color: grey; 
 }
+
+input[type="range"] {
+	-webkit-appearance: none;
+	background-color: gray;
+	border-radius: 7px;
+	width: 85%;
+}

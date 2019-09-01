@@ -11,6 +11,7 @@ window.onload = function () {
 		document.getElementById("C").style = "display: none";
 		document.getElementById("T").style = "display: none";
 		document.getElementById("S").style = "display: none";
+		document.getElementById("Z").style = "display: none";
 		document.getElementById(document.getElementById("ET").options[document.getElementById("ET").selectedIndex].value).style = "display: block"; 
 		var ActiveElement = document.getElementById("ET").options[document.getElementById("ET").selectedIndex].value;
 		console.log(ActiveElement);
@@ -24,6 +25,19 @@ window.onload = function () {
 			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
 			console.log(val);
 		}
+		function subrayar () {
+			var val = "[u]"+document.getElementById("ETT").value+"[/u]"
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+		function size () {
+			var val = "[size="+document.getElementById("STF").value+"]"+document.getElementById("ETT").value+"[/size]";
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+		function sizetext () {
+			document.getElementById("STT").style = "font-size:"+document.getElementById("STF").value+"px;";
+		}
 		switch (ActiveElement) {
 			case "C":
 				document.getElementById("ETB").onclick = EditColor;
@@ -31,6 +45,14 @@ window.onload = function () {
 			case "T":
 				document.getElementById("TC").onclick = tachar;
 				document.getElementById("ETB").onclick = tachar;
+				break;
+			case "S":
+				document.getElementById("ETB").onclick = subrayar;
+				document.getElementById("SC").onclick = subrayar;
+				break;
+			case "Z":
+				document.getElementById("ETB").onclick = size;
+				document.getElementById("STF").onchange = sizetext;
 				break;
 		}
 	}
