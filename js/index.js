@@ -23,6 +23,8 @@ window.onload = function () {
 			case "C":
 				document.getElementById("ETB").onclick = EditColor;
 				break;
+			case "T":
+				break;
 		}
 	}
 	EA2();
