@@ -11,6 +11,7 @@
 				<option value="0">seleccionar</option>
 				<option value="1">añadir una lista</option>
 				<option value="2">opciones para editar texto</option>
+				<option value="3">multimedia</option>
 			</select>
 			<br><br>
 			<div class="edit" id="edit">
@@ -25,7 +26,7 @@
 					<div class="SCTb" id="end" style="border-radius: 10px;height: 55%;width: 80%;padding: 0px;text-align: left; position: absolute;left: 10%;overflow: auto;">
 						<ul class="listTree"></ul>
 					</div>
-					<input type="button" value="convertir" style="border: solid 0px;border-radius: 5px;width: 80%;background-color: white;left: 10%;position: absolute;bottom: 5%;height: 20%;font-weight: 900;font-size: 18px"/>
+					<input type="button" value="convertir" style="border: solid 0px;border-radius: 5px;width: 80%;background-color: white;left: 10%;position: absolute;bottom: 15%;height: 10%;font-weight: 900;font-size: 18px"/>
 				</div>
 				<!-- </añadir una lista> -->
 				<!--<opciones para editar texto>-->
@@ -66,6 +67,31 @@
 					</div>
 				</div>
 				<!--</opciones para editar texto>-->
+				<!--<multimedia>-->
+				<div id="3" style="display: none">
+					<select>
+						<option value="U">url</option>
+						<option value="V">video</option>
+						<option value="I">imagen</option>
+					</select>
+					<div id="U" style="display: none">
+						<input type="text" placeholder="url" style="border-radius: 7px;"/>
+						<br>
+						<b style="color: white;font-size: 16px">es un url puro o es un texto con un url?</b>
+						<input type="button" value="no" style="border: solid 0px;border-radius: 6px;width: 10%;background-color: white"/>
+						<input type="text" placeholder="texto que contiene el url" style="border-radius: 7px;"/>
+						<input type="button" value="formatear" style="border: solid 0px;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;width: 40%;background-color: white"/>
+					</div>
+					<div id="V" style="display: none">
+						<input type="text" placeholder="url del video" style="border-radius: 7px;"/>
+						<input type="button" value="formatear" style="border: solid 0px;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;width: 40%;background-color: white"/>
+					</div>
+					<div id="I" style="display: none">
+						<input type="text" placeholder="url de la imagen" style="border-radius: 7px;"/>
+						<input type="button" value="formatear" style="border: solid 0px;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;width: 40%;background-color: white"/>
+					</div>
+				</div>
+				<!--</multimedia>-->
 			</div>
 		</center>
 	</body>
