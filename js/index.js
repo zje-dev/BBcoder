@@ -3,7 +3,32 @@ window.onload = function () {
 		document.getElementById("0").style = "display: none";
 		document.getElementById("1").style = "display: none";
 		document.getElementById("2").style = "display: none";
-		document.getElementById(document.getElementById("EV").options[document.getElementById("EV").selectedIndex].value).style = "display: block"; 
+		document.getElementById(document.getElementById("EV").options[document.getElementById("EV").selectedIndex].value).style = "display: block";
+		var ActiveElement = document.getElementById("EV").options[document.getElementById("EV").selectedIndex].value;
+		function add2list () {
+			var MeleM = document.createElement("li");
+			MeleM.appendChild(document.createTextNode(document.getElementById("1").childNodes[1].value));
+			document.getElementById("1").childNodes[7].childNodes[1].appendChild(MeleM);
+		}
+		function formatlist () {
+			if (document.getElementById("1").childNodes[7].childNodes[1].childNodes.length > 0) {
+				var result = "[list]";
+				for (var elem = 0; elem < document.getElementById("1").childNodes[7].childNodes[1].childNodes.length; elem++) {
+					result += "[*]"+document.getElementById("1").childNodes[7].childNodes[1].childNodes[elem].textContent;
+				}
+				result += "[/list]"
+				document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + result;
+				console.log(result);
+			} else {
+				alert("la lista no tiene elementos");
+			}
+		}
+		switch(ActiveElement) {
+			case "1":
+				document.getElementById("1").childNodes[3].onclick = add2list;
+				document.getElementById("1").childNodes[9].onclick = formatlist;
+				break;
+		}
 	}
 	EA();
 	document.getElementById("EV").onchange = EA;
