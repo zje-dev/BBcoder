@@ -10,7 +10,7 @@
 	"content_scripts": [{
 		"css": ["css/index.css"],
 		"js": ["js/index.js"],
-		"matches": ["http://www.google.com/*"]
+		"matches": ["*://*.mozilla.org/*"]
 	}],
 	"web_accessible_resources": [
 		"css/index.css"
