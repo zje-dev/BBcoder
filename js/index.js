@@ -3,6 +3,7 @@ window.onload = function () {
 		document.getElementById("0").style = "display: none";
 		document.getElementById("1").style = "display: none";
 		document.getElementById("2").style = "display: none";
+		document.getElementById("3").style = "display: none";
 		document.getElementById(document.getElementById("EV").options[document.getElementById("EV").selectedIndex].value).style = "display: block";
 		var ActiveElement = document.getElementById("EV").options[document.getElementById("EV").selectedIndex].value;
 		function add2list () {
@@ -27,6 +28,9 @@ window.onload = function () {
 			case "1":
 				document.getElementById("1").childNodes[3].onclick = add2list;
 				document.getElementById("1").childNodes[9].onclick = formatlist;
+				break;
+			case "3":
+				document.getElementById("3").childNodes[1].onchange = EA3;
 				break;
 		}
 	}
@@ -103,4 +107,55 @@ window.onload = function () {
 	}
 	EA2();
 	document.getElementById("ET").onchange = EA2;
+	function EA3 () {
+		document.getElementById("U1").style = "display: none";
+		document.getElementById("V2").style = "display: none";
+		document.getElementById("I").style = "display: none";
+		document.getElementById(document.getElementById("3").childNodes[1].value).style = "display: block";
+		switch (document.getElementById("3").childNodes[1].value) {
+			case "U1":
+				console.log(document.getElementById("U1").childNodes);
+				document.getElementById("U1").childNodes[7].onclick = UOF;
+				document.getElementById("U1").childNodes[11].onclick = Uformateado;
+				break;
+			case "V2":
+				console.log(document.getElementById("V2").childNodes);
+				document.getElementById("V2").childNodes[3].onclick = Vformateado;
+				break;
+			case "I":
+				console.log(document.getElementById("I").childNodes);
+				document.getElementById("I").childNodes[3].onclick = Iformateado;
+				break;
+		}
+		function UOF () {
+			if (document.getElementById("U1").childNodes[7].value == "no") {
+				document.getElementById("U1").childNodes[7].value = "si";
+				document.getElementById("U1").childNodes[9].style = "border-radius: 7px;display: block;";
+			} else {
+				document.getElementById("U1").childNodes[7].value = "no";
+				document.getElementById("U1").childNodes[9].style = "border-radius: 7px;display: none;";
+			}
+		}
+		function Uformateado () {
+			var val = "[url";
+			if (document.getElementById("U1").childNodes[7].value == "si") {
+				val += "="+document.getElementById("U1").childNodes[1].value + "]" + document.getElementById("U1").childNodes[9].value + "[/url]";
+			} else {
+				val += "]"+ document.getElementById("U1").childNodes[1].value +"[/url]";
+			}
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+		function Vformateado () {
+			var val = "[video]" + document.getElementById("V2").childNodes[1].value + "[/video]";
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+		function Iformateado () {
+			var val = "[img]" + document.getElementById("I").childNodes[1].value + "[/img]";
+			document.getElementById("in_the_end").value = document.getElementById("in_the_end").value + val;
+			console.log(val);
+		}
+	}
+	EA3();
 }
